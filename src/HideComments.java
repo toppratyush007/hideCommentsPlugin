@@ -40,7 +40,7 @@ public class HideComments extends AnAction {
             String currentLine;
             StringBuilder stringBuilder = new StringBuilder();
             while ((currentLine = br.readLine()) != null) {
-                if(!currentLine.startsWith("log") && !currentLine.startsWith("//"))
+                if(!currentLine.matches("([ \t]+(log|//).*)"))
                     stringBuilder.append(currentLine);
                 stringBuilder.append("\n");
             }
